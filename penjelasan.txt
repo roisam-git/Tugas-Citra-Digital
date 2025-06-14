@@ -1,0 +1,41 @@
+1. Erosi
+Tujuan: Mengecilkan objek putih (foreground), menghilangkan noise kecil, dan memisahkan objek yang saling menempel.
+
+Proses:
+Setiap piksel putih akan dihapus jika ada satu saja tetangganya yang hitam (pakai kernel).
+
+Efek Visual:
+Objek jadi lebih tipis/kecil, tepi menyusut.
+
+Contoh Hasil: Objek huruf atau bentuk tampak lebih ramping.
+
+2. Dilasi 
+Tujuan: Membesarkan objek putih, menutupi lubang kecil, dan menyambung bagian objek yang putus.
+
+Proses:
+Piksel putih akan meluas ke sekitar jika ada tetangganya yang putih.
+
+Efek Visual:
+Objek jadi lebih tebal/besar, celah antar objek bisa menyatu.
+
+Contoh Hasil: Teks lebih tebal, noise kecil tertutup.
+
+3. Opening
+Tujuan: Menghilangkan noise kecil (titik-titik putih), tapi tetap menjaga bentuk utama objek.
+
+Proses: Erosi ➝ Dilasi
+
+Efek Visual:
+Objek tetap bentuknya, tapi noise kecil hilang.
+
+Contoh Hasil: Citra jadi lebih bersih sebelum diproses lebih lanjut.
+
+4. Closing
+Tujuan: Menutup lubang-lubang kecil di dalam objek putih atau menyambung bagian yang terputus.
+
+Proses: Dilasi ➝ Erosi
+
+Efek Visual:
+Lubang hitam dalam objek tertutup, objek tampak lebih utuh/padat.
+
+Contoh Hasil: Huruf bolong atau pecah jadi menyatu.
